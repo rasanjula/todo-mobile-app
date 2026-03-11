@@ -9,6 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.todomobileapp.viewModel.TodoViewModel
+import com.example.todomobileapp.model.Todo
 
 @Composable
 fun TodoScreen(
@@ -24,14 +25,14 @@ fun TodoScreen(
 @Composable
 fun TodoList(
     modifier: Modifier = Modifier,
-    todos: List<String>
+    todos: List<Todo>
 ) {
     LazyColumn(
         modifier = modifier.padding(8.dp)
     ) {
         items(todos) { todo ->
             Text(
-                text = todo,
+                text = todo.title,
                 modifier = Modifier.padding(top = 4.dp, bottom = 4.dp)
             )
         }
